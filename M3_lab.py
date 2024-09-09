@@ -1,7 +1,14 @@
+'''
+Program: M3_lab.py
+Author: Erin Hurm
+Version: 1.0
+Date: 09/08/24
+Purpose: Accepts various details regarding a vehicle, assigns them to attributes in a class, and repeats them back
+'''
+
 class Vehicle():
     def __init__(self,vehicleType):
-        self.vehicleType = vehicleType
-        
+        self.vehicleType = vehicleType  
 
 class Automobile(Vehicle):
     def __init__(self, vehicleType, year, make, model, doors, roof): 
@@ -16,12 +23,15 @@ class Automobile(Vehicle):
         return f"Vehicle type: {self.vehicleType}\nYear: {self.year}\nMake: {self.make}\nModel: {self.model}\nDoors: {self.doors}\nRoof: {self.roof}"
 
 ## App start
+#check for errors within input
 def error_check(trait, check):
     if trait in check:
         return True
     else:
+        print("\nInvalid response.")
         return False
 
+# can get replaced with code that allows for other inputs
 vehicleType = "car"
 
 if vehicleType == "car":
@@ -46,5 +56,6 @@ if vehicleType == "car":
         roof = input("Roof (solid or sun roof): ")
         
     myVehicle = Automobile(vehicleType, year, make, model, doors, roof)
-    
+
+print("\nYOUR VEHICLE:")
 print(myVehicle)
